@@ -49,11 +49,17 @@ const {
   <body>
     <header class="container">
       <a href="/" aria-label="ironoa home"><strong>ironoa</strong></a>
+      <button class="burger-menu" aria-label="Open menu" onclick="document.querySelector('nav').classList.add('open')">
+        <i class="mdi mdi-menu"></i>
+      </button>
       <nav>
-        <a href="/polkadot">Polkadot</a>
-        <a href="/kusama">Kusama</a>
-        <a href="/about">About</a>
-        <a href="/terms">Terms</a>
+        <button class="close-menu" aria-label="Close menu" onclick="this.parentElement.classList.remove('open')">
+          <i class="mdi mdi-close"></i>
+        </button>
+        <a href="/polkadot" onclick="this.parentElement.classList.remove('open')">Polkadot</a>
+        <a href="/kusama" onclick="this.parentElement.classList.remove('open')">Kusama</a>
+        <a href="/about" onclick="this.parentElement.classList.remove('open')">About</a>
+        <a href="/terms" onclick="this.parentElement.classList.remove('open')">Terms</a>
       </nav>
     </header>
 
