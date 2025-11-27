@@ -10,7 +10,7 @@ Our validator infrastructure is designed with different approaches for each netw
 Hosted in a unique location in Southern Switzerland with self-hosted infrastructure. This setup prioritizes independence, decentralization, and control over the full stack.
 
 **Hardware Specifications:**
-- CPU: AMD Ryzen 9 9950X (8 dedicated cores, SMT disabled)
+- CPU: AMD Ryzen 9 9950X3D (8 dedicated cores, SMT disabled)
 - Memory: 96GB DDR5 ECC @ 5600MT/s (32GB dedicated to Polkadot VM)
 - Storage: ZFS mirrored array with 2× Samsung 990 Pro 4TB NVMe PCIe 4.0
 - Network: 10 Gbit/s symmetric, unmetered
