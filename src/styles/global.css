@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root { --max: 960px; --border: #eaeaea; }
 html,body { margin:0; font-family: "Open Sans", system-ui, -apple-system, Arial, sans-serif; color:#111; height:100%; }
 body { display:flex; flex-direction:column; min-height:100vh; }
