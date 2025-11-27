@@ -3,15 +3,42 @@ import Base from '../layouts/Base.astro';
 ---
 <Base title="About — ironoa" description="About ironoa validator operations and philosophy.">
   <h1 class="h1"><i class="mdi mdi-information-outline"></i> About</h1>
-  <p class="muted">We’re an independent operator focused on reliability, security, and low downtime.</p>
+  <p>Independent validator operations for the Polkadot ecosystem, operating since 2020.</p>
+
+  <div class="panel">
+    <h2 class="h2"><i class="mdi mdi-strategy"></i> Operational Strategy</h2>
+    <p>Our infrastructure employs different approaches for each network, optimized for specific operational goals:</p>
+    
+    <h3 style="font-size: 1rem; font-weight: 600; margin-top: 1rem;">Polkadot: Independence</h3>
+    <p>Self-hosted infrastructure at a unique location in Southern Switzerland. This setup provides maximum independence, decentralization, and full control over the validator stack, from hardware to network connectivity.</p>
+    
+    <h3 style="font-size: 1rem; font-weight: 600; margin-top: 1rem;">Kusama: Availability</h3>
+    <p>Professional OVH datacenter hosting. This approach focuses on maximum availability through established infrastructure providers with proven uptime records.</p>
+  </div>
 
   <div class="panel">
     <h2 class="h2"><i class="mdi mdi-shield-check"></i> Operations</h2>
     <ul class="kv">
       <li><span>Location</span><code>Switzerland</code></li>
-      <li><span>Architecture</span><code>Sentry + validator isolation</code></li>
-      <li><span>Monitoring</span><code>24/7 alerting, on-call rotation</code></li>
-      <li><span>Upgrades</span><code>Blue/green, maintenance windows</code></li>
+      <li><span>Operating Since</span><code>2020</code></li>
+      <li><span>Monitoring</span><code>External 24/7 alerting system</code></li>
+      <li><span>Infrastructure</span><code>Dedicated bare-metal servers</code></li>
+    </ul>
+  </div>
+
+  <div class="panel">
+    <h2 class="h2"><i class="mdi mdi-certificate"></i> Program Participation</h2>
+    <p><strong>Polkadot:</strong> Selected for Web3 Foundation's Decentralized Nodes Program Cohort 3, with application submitted for Cohort 4. Initially participated in the 1KV program until its shutdown.</p>
+    <p style="margin-top: 0.75rem;"><strong>Kusama:</strong> Operated independently since 2020. Initially participated in the 1KV program until its shutdown.</p>
+  </div>
+
+  <div class="panel">
+    <h2 class="h2"><i class="mdi mdi-target"></i> Focus Areas</h2>
+    <ul style="margin-left: 1.25rem; line-height: 1.8;">
+      <li>High-performance hardware with ECC memory and redundant storage</li>
+      <li>Dedicated external monitoring for proactive issue detection</li>
+      <li>Network decentralization through unique infrastructure choices</li>
+      <li>Transparent communication with nominators</li>
     </ul>
   </div>
 </Base>

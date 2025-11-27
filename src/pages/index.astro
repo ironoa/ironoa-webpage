@@ -1,27 +1,32 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
 const pageTitle = 'ironoa — Independent Polkadot & Kusama Validator';
 const desc = 'Independent validator services from Switzerland with bare-metal hardware, redundancy, and strong operational practices.';
+
+const all = await getCollection('news', ({ data }) => !data.draft);
+const posts = all.sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
 ---
 <Base title={pageTitle} description={desc}>
-  <h1 class="h1"><i class="mdi mdi-shield-check"></i> Reliable, independent validation</h1>
-  <p class="lede">Bare-metal infrastructure in Switzerland. Security-first operations. Transparent practices.</p>
+  <h1 class="h1">ALESSIO aka ironoa</h1>
+  <p class="lede">Independent Polkadot & Kusama Validator</p>
 
-  <div class="grid">
-    <div class="panel">
-      <h2 class="h2"><i class="mdi mdi-pokeball"></i> Polkadot</h2>
-      <p>Details, how to nominate, and explorer links.</p>
-      <p><a class="btn" href="/polkadot"><i class="mdi mdi-open-in-new"></i> Learn more</a></p>
-    </div>
-    <div class="panel">
-      <h2 class="h2"><i class="mdi mdi-klingon"></i> Kusama</h2>
-      <p>Our Kusama validator profile and guidance.</p>
-      <p><a class="btn" href="/kusama"><i class="mdi mdi-open-in-new"></i> Learn more</a></p>
-    </div>
-    <div class="panel">
-      <h2 class="h2"><i class="mdi mdi-newspaper-variant-outline"></i> News</h2>
-      <p>Updates, upgrades, and announcements.</p>
-      <p><a class="btn" href="/news"><i class="mdi mdi-open-in-new"></i> Read news</a></p>
-    </div>
+  <h2 class="h2" style="margin-top: 2rem;"><i class="mdi mdi-newspaper-variant-outline"></i> News & Updates</h2>
+  
+  <div class="news-cards">
+    {posts.map(p => (
+      <article class="news-card">
+        <div class="news-date muted">{p.data.date}</div>
+        <h3 class="news-title">{p.data.title}</h3>
+        <div class="news-excerpt">
+          {p.body.split('\n\n')[0].replace(/^#+\s.*$/gm, '').substring(0, 200)}...
+        </div>
+        <a href={`/news/${p.slug}/`} class="btn" style="margin-top: 0.75rem;">
+          <i class="mdi mdi-open-in-new"></i> Read more
+        </a>
+      </article>
+    ))}
   </div>
+
 </Base>

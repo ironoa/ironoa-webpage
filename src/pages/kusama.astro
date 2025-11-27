@@ -2,23 +2,59 @@
 import Base from '../layouts/Base.astro';
 
 const validator = {
-  name: 'ironoa',
-  address: 'H1jk…KSM', // replace with your real Kusama address
-  commission: '3%',
-  subscan: 'https://kusama.subscan.io/validator/H1jk…KSM',
-  telemetry: 'https://telemetry.polkadot.io/#list/H1jk…KSM',
+  name: 'ALESSIO',
+  address: 'GaK38GT7LmgCpRSTRdDC2LeiMaV9TJmx8NmQcb9L3cJ3fyX',
+  commission: '15%',
+  location: 'OVH Infrastructure',
+  assetHubSubscan: 'https://assethub-kusama.subscan.io/validator/GaK38GT7LmgCpRSTRdDC2LeiMaV9TJmx8NmQcb9L3cJ3fyX',
 };
 ---
-<Base title="Kusama — ironoa" description="ironoa Kusama validator details and how to nominate.">
-  <h1 class="h1"><i class="mdi mdi-klingon"></i> Kusama Validator</h1>
+<Base title="Kusama — ironoa" description="ironoa Kusama validator details and specifications.">
+  <h1 class="h1"><img src="/kusama-icon.jpg" alt="Kusama" style="width: 32px; height: 32px; display: inline-block; vertical-align: middle; margin-right: 0.5rem;" /> Kusama Validator</h1>
+  <p>Independent Kusama validator hosted on professional OVH infrastructure.</p>
+
   <div class="panel">
+    <h2 class="h2"><i class="mdi mdi-fingerprint"></i> Validator Details</h2>
     <ul class="kv">
-      <li><span>Address</span><code>{validator.address}</code></li>
+      <li><span>Validator</span><code>{validator.name}</code></li>
+      <li><span>Address</span><code style="font-size: 0.8rem;">{validator.address}</code></li>
       <li><span>Commission</span><code>{validator.commission}</code></li>
+      <li><span>Hosting</span><code>{validator.location}</code></li>
     </ul>
-    <p style="margin-top:.75rem; display:flex; gap:.75rem; flex-wrap:wrap;">
-      <a class="btn" href={validator.subscan} target="_blank" rel="noreferrer"><i class="mdi mdi-open-in-new"></i> Subscan</a>
-      <a class="btn" href={validator.telemetry} target="_blank" rel="noreferrer"><i class="mdi mdi-chart-timeline-variant"></i> Telemetry</a>
+    <p style="margin-top:.75rem;">
+      <a class="btn" href={validator.assetHubSubscan} target="_blank" rel="noreferrer"><i class="mdi mdi-open-in-new"></i> AssetHub Subscan</a>
     </p>
+  </div>
+
+  <div class="panel">
+    <h2 class="h2"><i class="mdi mdi-server"></i> Infrastructure</h2>
+    <p>Hosted on OVH infrastructure with professional-grade datacenter services. This setup focuses on maximum availability through established hosting providers.</p>
+    
+    <h3 style="font-size: 1rem; font-weight: 600; margin-top: 1rem;">Hardware Specifications</h3>
+    <ul class="kv">
+      <li><span>CPU</span><code>Intel Xeon-E 2136</code></li>
+      <li><span>Cores/Threads</span><code>6c/12t @ 3.3-4.5 GHz</code></li>
+      <li><span>Memory</span><code>64GB ECC RAM @ 2666 MHz</code></li>
+      <li><span>Storage</span><code>Soft RAID1: 2× 1.92TB NVMe SSD</code></li>
+      <li><span>Network</span><code>500 Mbit/s symmetric, unmetered</code></li>
+    </ul>
+
+    <h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem;">Monitoring</h3>
+    <p>Dedicated external monitoring system with 24/7 alerting ensures operational continuity.</p>
+  </div>
+
+  <div class="panel">
+    <h2 class="h2"><i class="mdi mdi-information-outline"></i> Independent Operation</h2>
+    <p>This validator operates fully independently, relying on direct nominations from the community. The validator initially participated in the 1KV program but now runs autonomously following the program's shutdown.</p>
+  </div>
+
+  <div class="panel">
+    <h2 class="h2"><i class="mdi mdi-anchor"></i> How to Nominate</h2>
+    <ol style="margin-left:1.25rem; line-height: 1.8;">
+      <li>Open <a href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkusama-rpc.polkadot.io#/staking" target="_blank" rel="noreferrer" style="text-decoration: underline;">Polkadot.js Kusama Staking interface</a></li>
+      <li>Select your stash account and choose "Nominate"</li>
+      <li>Add our validator address: <code style="font-size: 0.75rem;">{validator.address}</code></li>
+      <li>Confirm the transaction</li>
+    </ol>
   </div>
 </Base>

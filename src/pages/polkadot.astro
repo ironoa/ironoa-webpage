@@ -2,39 +2,56 @@
 import Base from '../layouts/Base.astro';
 
 const validator = {
-  name: 'ironoa',
-  address: '12abc…XYZ', // replace with your real address
-  commission: '3%',
-  location: 'Switzerland',
-  hardware: 'Bare-metal, ECC RAM, redundant power & network',
-  subscan: 'https://polkadot.subscan.io/validator/12abc…XYZ',
-  telemetry: 'https://telemetry.polkadot.io/#list/12abc…XYZ',
+  name: 'ALESSIO',
+  address: '16cdSZUq7kxq6mtoVMWmYXo62FnNGT9jzWjVRUg87CpL9pxP',
+  commission: '5%',
+  location: 'Southern Switzerland',
+  subscan: 'https://polkadot.subscan.io/validator/16cdSZUq7kxq6mtoVMWmYXo62FnNGT9jzWjVRUg87CpL9pxP',
+  assetHubSubscan: 'https://assethub-polkadot.subscan.io/validator/16cdSZUq7kxq6mtoVMWmYXo62FnNGT9jzWjVRUg87CpL9pxP',
 };
 ---
-<Base title="Polkadot — ironoa" description="ironoa Polkadot validator details and how to nominate.">
-  <h1 class="h1"><i class="mdi mdi-pokeball"></i> Polkadot Validator</h1>
-  <p>Independent, high-availability validation on Polkadot from <strong>{validator.location}</strong>.</p>
+<Base title="Polkadot — ironoa" description="ironoa Polkadot validator details and specifications.">
+  <h1 class="h1"><img src="/polkadot-icon.png" alt="Polkadot" style="width: 32px; height: 32px; display: inline-block; vertical-align: middle; margin-right: 0.5rem;" /> Polkadot Validator</h1>
+  <p>Independent validation on Polkadot with self-hosted infrastructure in {validator.location}.</p>
 
   <div class="panel">
-    <h2 class="h2"><i class="mdi mdi-fingerprint"></i> Details</h2>
+    <h2 class="h2"><i class="mdi mdi-fingerprint"></i> Validator Details</h2>
     <ul class="kv">
       <li><span>Validator</span><code>{validator.name}</code></li>
-      <li><span>Address</span><code>{validator.address}</code></li>
+      <li><span>Address</span><code style="font-size: 0.8rem;">{validator.address}</code></li>
       <li><span>Commission</span><code>{validator.commission}</code></li>
-      <li><span>Hardware</span><code>{validator.hardware}</code></li>
+      <li><span>Location</span><code>{validator.location}</code></li>
     </ul>
     <p style="margin-top:.75rem; display:flex; gap:.75rem; flex-wrap:wrap;">
-      <a class="btn" href={validator.subscan} target="_blank" rel="noreferrer"><i class="mdi mdi-open-in-new"></i> Subscan</a>
-      <a class="btn" href={validator.telemetry} target="_blank" rel="noreferrer"><i class="mdi mdi-chart-timeline-variant"></i> Telemetry</a>
+      <a class="btn" href={validator.assetHubSubscan} target="_blank" rel="noreferrer"><i class="mdi mdi-open-in-new"></i> AssetHub Subscan</a>
     </p>
   </div>
 
   <div class="panel">
-    <h2 class="h2"><i class="mdi mdi-anchor"></i> Nominate this validator</h2>
-    <ol style="margin-left:1.25rem;">
-      <li>Open <a href="https://polkadot.js.org/apps/#/staking" target="_blank" rel="noreferrer">Polkadot.js Staking</a>.</li>
-      <li>Select your stash/controller and choose nominees.</li>
-      <li>Add our validator address <code>{validator.address}</code> and confirm.</li>
+    <h2 class="h2"><i class="mdi mdi-server"></i> Infrastructure</h2>
+    <p>Self-hosted infrastructure at a unique location in Southern Switzerland. This setup prioritizes independence, decentralization, and full control over the validator stack.</p>
+    
+    <h3 style="font-size: 1rem; font-weight: 600; margin-top: 1rem;">Hardware Specifications</h3>
+    <ul class="kv">
+      <li><span>CPU</span><code>AMD Ryzen 9 9950X</code></li>
+      <li><span>Cores</span><code>8 dedicated cores (SMT disabled)</code></li>
+      <li><span>Memory</span><code>96GB DDR5 ECC @ 5600MT/s</code></li>
+      <li><span>Dedicated RAM</span><code>32GB to Polkadot VM</code></li>
+      <li><span>Storage</span><code>ZFS RAID1: 2× Samsung 990 Pro 4TB NVMe</code></li>
+      <li><span>Network</span><code>10 Gbit/s symmetric, unmetered</code></li>
+    </ul>
+
+    <h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem;">Monitoring</h3>
+    <p>Dedicated external monitoring system with 24/7 alerting ensures operational continuity.</p>
+  </div>
+
+  <div class="panel">
+    <h2 class="h2"><i class="mdi mdi-anchor"></i> How to Nominate</h2>
+    <ol style="margin-left:1.25rem; line-height: 1.8;">
+      <li>Open <a href="https://polkadot.js.org/apps/#/staking" target="_blank" rel="noreferrer" style="text-decoration: underline;">Polkadot.js Staking interface</a></li>
+      <li>Select your stash account and choose "Nominate"</li>
+      <li>Add our validator address: <code style="font-size: 0.75rem;">{validator.address}</code></li>
+      <li>Confirm the transaction</li>
     </ol>
   </div>
 </Base>
