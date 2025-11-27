@@ -1,0 +1,70 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogUrl?: string;
+}
+const {
+  title = 'ironoa — Independent Polkadot & Kusama Validator',
+  description = 'Independent validator services for the Polkadot ecosystem, operated from Switzerland with high-end hardware and an excellent operational record.',
+  canonical = new URL(Astro.url.pathname, Astro.site).toString(),
+  ogUrl = canonical
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Polkadot validator, Kusama validator, 1KV program, blockchain validator, Swiss validator, crypto valley" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={ogUrl} />
+
+    <!-- Canonical + alternates -->
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" href="https://ironoa.com" hreflang="x-default" />
+    <link rel="alternate" href="https://ironoa.ch" hreflang="de-CH" />
+    <link rel="alternate" href="https://ironoa.io" hreflang="en-US" />
+
+    <!-- Icons/manifest (drop files into /public) -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Fonts + icons -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body>
+    <header class="container">
+      <a href="/" aria-label="ironoa home"><strong>ironoa</strong></a>
+      <nav>
+        <a href="/news">News</a>
+        <a href="/polkadot">Polkadot</a>
+        <a href="/kusama">Kusama</a>
+        <a href="/about">About</a>
+        <a href="/terms">Terms</a>
+      </nav>
+    </header>
+
+    <main class="container main">
+      <slot />
+    </main>
+
+    <footer class="container">
+      <span>© {new Date().getFullYear()} ironoa</span>
+      <span class="muted">Independent Polkadot & Kusama Validator</span>
+    </footer>
+  </body>
+</html>

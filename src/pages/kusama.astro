@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+
+const validator = {
+  name: 'ironoa',
+  address: 'H1jk…KSM', // replace with your real Kusama address
+  commission: '3%',
+  subscan: 'https://kusama.subscan.io/validator/H1jk…KSM',
+  telemetry: 'https://telemetry.polkadot.io/#list/H1jk…KSM',
+};
+---
+<Base title="Kusama — ironoa" description="ironoa Kusama validator details and how to nominate.">
+  <h1 class="h1"><i class="mdi mdi-klingon"></i> Kusama Validator</h1>
+  <div class="panel">
+    <ul class="kv">
+      <li><span>Address</span><code>{validator.address}</code></li>
+      <li><span>Commission</span><code>{validator.commission}</code></li>
+    </ul>
+    <p style="margin-top:.75rem; display:flex; gap:.75rem; flex-wrap:wrap;">
+      <a class="btn" href={validator.subscan} target="_blank" rel="noreferrer"><i class="mdi mdi-open-in-new"></i> Subscan</a>
+      <a class="btn" href={validator.telemetry} target="_blank" rel="noreferrer"><i class="mdi mdi-chart-timeline-variant"></i> Telemetry</a>
+    </p>
+  </div>
+</Base>

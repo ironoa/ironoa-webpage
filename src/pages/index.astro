@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+const pageTitle = 'ironoa — Independent Polkadot & Kusama Validator';
+const desc = 'Independent validator services from Switzerland with bare-metal hardware, redundancy, and strong operational practices.';
+---
+<Base title={pageTitle} description={desc}>
+  <h1 class="h1"><i class="mdi mdi-shield-check"></i> Reliable, independent validation</h1>
+  <p class="lede">Bare-metal infrastructure in Switzerland. Security-first operations. Transparent practices.</p>
+
+  <div class="grid">
+    <div class="panel">
+      <h2 class="h2"><i class="mdi mdi-pokeball"></i> Polkadot</h2>
+      <p>Details, how to nominate, and explorer links.</p>
+      <p><a class="btn" href="/polkadot"><i class="mdi mdi-open-in-new"></i> Learn more</a></p>
+    </div>
+    <div class="panel">
+      <h2 class="h2"><i class="mdi mdi-klingon"></i> Kusama</h2>
+      <p>Our Kusama validator profile and guidance.</p>
+      <p><a class="btn" href="/kusama"><i class="mdi mdi-open-in-new"></i> Learn more</a></p>
+    </div>
+    <div class="panel">
+      <h2 class="h2"><i class="mdi mdi-newspaper-variant-outline"></i> News</h2>
+      <p>Updates, upgrades, and announcements.</p>
+      <p><a class="btn" href="/news"><i class="mdi mdi-open-in-new"></i> Read news</a></p>
+    </div>
+  </div>
+</Base>

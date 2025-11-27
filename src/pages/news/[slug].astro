@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, getEntryBySlug } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news', ({ data }) => !data.draft);
+  return posts.map((p) => ({ params: { slug: p.slug } }));
+}
+
+const { slug } = Astro.params;
+const entry = await getEntryBySlug('news', slug);
+if (!entry) throw new Error('Post not found');
+
+const { Content } = await entry.render();
+const title = `${entry.data.title} — ironoa`;
+---
+<Base title={title} description={entry.data.title}>
+  <article>
+    <p class="muted">{entry.data.date}</p>
+    <h1 class="h1">{entry.data.title}</h1>
+    <Content />
+  </article>
+</Base>

@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const all = await getCollection('news', ({ data }) => !data.draft);
+const posts = all.sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+---
+<Base title="News — ironoa" description="Updates and announcements from ironoa.">
+  <h1 class="h1"><i class="mdi mdi-newspaper-variant-outline"></i> News</h1>
+  <ul class="news-list">
+    {posts.map(p => (
+      <li>
+        <div class="muted">{p.data.date}</div>
+        <a href={`/news/${p.slug}/`}><strong>{p.data.title}</strong></a>
+      </li>
+    ))}
+  </ul>
+</Base>

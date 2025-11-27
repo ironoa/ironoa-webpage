@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+
+const validator = {
+  name: 'ironoa',
+  address: '12abc…XYZ', // replace with your real address
+  commission: '3%',
+  location: 'Switzerland',
+  hardware: 'Bare-metal, ECC RAM, redundant power & network',
+  subscan: 'https://polkadot.subscan.io/validator/12abc…XYZ',
+  telemetry: 'https://telemetry.polkadot.io/#list/12abc…XYZ',
+};
+---
+<Base title="Polkadot — ironoa" description="ironoa Polkadot validator details and how to nominate.">
+  <h1 class="h1"><i class="mdi mdi-pokeball"></i> Polkadot Validator</h1>
+  <p>Independent, high-availability validation on Polkadot from <strong>{validator.location}</strong>.</p>
+
+  <div class="panel">
+    <h2 class="h2"><i class="mdi mdi-fingerprint"></i> Details</h2>
+    <ul class="kv">
+      <li><span>Validator</span><code>{validator.name}</code></li>
+      <li><span>Address</span><code>{validator.address}</code></li>
+      <li><span>Commission</span><code>{validator.commission}</code></li>
+      <li><span>Hardware</span><code>{validator.hardware}</code></li>
+    </ul>
+    <p style="margin-top:.75rem; display:flex; gap:.75rem; flex-wrap:wrap;">
+      <a class="btn" href={validator.subscan} target="_blank" rel="noreferrer"><i class="mdi mdi-open-in-new"></i> Subscan</a>
+      <a class="btn" href={validator.telemetry} target="_blank" rel="noreferrer"><i class="mdi mdi-chart-timeline-variant"></i> Telemetry</a>
+    </p>
+  </div>
+
+  <div class="panel">
+    <h2 class="h2"><i class="mdi mdi-anchor"></i> Nominate this validator</h2>
+    <ol style="margin-left:1.25rem;">
+      <li>Open <a href="https://polkadot.js.org/apps/#/staking" target="_blank" rel="noreferrer">Polkadot.js Staking</a>.</li>
+      <li>Select your stash/controller and choose nominees.</li>
+      <li>Add our validator address <code>{validator.address}</code> and confirm.</li>
+    </ol>
+  </div>
+</Base>
