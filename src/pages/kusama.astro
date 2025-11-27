@@ -21,8 +21,9 @@ const validator = {
       <li><span>Commission</span><code>{validator.commission}</code></li>
       <li><span>Hosting</span><code>{validator.location}</code></li>
     </ul>
-    <p style="margin-top:.75rem;">
+    <p style="margin-top:.75rem; display:flex; gap:.75rem; flex-wrap:wrap;">
       <a class="btn" href={validator.assetHubSubscan} target="_blank" rel="noreferrer"><i class="mdi mdi-open-in-new"></i> AssetHub Subscan</a>
+      <a class="btn" href="https://telemetry.polkadot.io/" target="_blank" rel="noreferrer"><i class="mdi mdi-open-in-new"></i> Telemetry</a>
     </p>
   </div>
 
@@ -33,9 +34,9 @@ const validator = {
     <h3 style="font-size: 1rem; font-weight: 600; margin-top: 1rem;">Hardware Specifications</h3>
     <ul class="kv">
       <li><span>CPU</span><code>Intel Xeon-E 2136</code></li>
-      <li><span>Cores/Threads</span><code>6c/12t @ 3.3-4.5 GHz</code></li>
+      <li><span>Cores</span><code>6 dedicated cores (SMT disabled)</code></li>
       <li><span>Memory</span><code>64GB ECC RAM @ 2666 MHz</code></li>
-      <li><span>Storage</span><code>Soft RAID1: 2× 1.92TB NVMe SSD</code></li>
+      <li><span>Storage</span><code>Soft RAID1: ×2 1.92TB NVMe SSD</code></li>
       <li><span>Network</span><code>500 Mbit/s symmetric, unmetered</code></li>
     </ul>
 
@@ -51,7 +52,7 @@ const validator = {
   <div class="panel">
     <h2 class="h2"><i class="mdi mdi-anchor"></i> How to Nominate</h2>
     <ol style="margin-left:1.25rem; line-height: 1.8;">
-      <li>Open <a href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkusama-rpc.polkadot.io#/staking" target="_blank" rel="noreferrer" style="text-decoration: underline;">Polkadot.js Kusama Staking interface</a></li>
+      <li>Open <a href="https://polkadot.js.org/apps/#/staking" target="_blank" rel="noreferrer" style="text-decoration: underline;">Polkadot.js Staking interface</a></li>
       <li>Select your stash account and choose "Nominate"</li>
       <li>Add our validator address: <code style="font-size: 0.75rem;">{validator.address}</code></li>
       <li>Confirm the transaction</li>
