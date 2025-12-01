@@ -7,6 +7,23 @@ const desc = 'Independent validator services from Switzerland with bare-metal ha
 
 const all = await getCollection('news', ({ data }) => !data.draft);
 const posts = all.sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+
+// Helper function to extract plain text from markdown
+function getExcerpt(body: string, maxLength = 200): string {
+  // Remove markdown headers
+  let text = body.replace(/^#+\s+(.*)$/gm, '$1');
+  // Remove markdown links but keep the text: [text](url) -> text
+  text = text.replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1');
+  // Remove bold/italic markers
+  text = text.replace(/[*_]{1,2}([^*_]+)[*_]{1,2}/g, '$1');
+  // Get first paragraph
+  text = text.split('\n\n')[0];
+  // Truncate
+  if (text.length > maxLength) {
+    text = text.substring(0, maxLength) + '...';
+  }
+  return text;
+}
 ---
 <Base title={pageTitle} description={desc}>
   <h1 class="h1"><img src="/green-tick-icon.jpg" alt="Verified" style="width: 32px; height: 32px; display: inline-block; vertical-align: middle; margin-right: 0.5rem;" /> ALESSIO aka ironoa</h1>
@@ -20,7 +37,7 @@ const posts = all.sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
         <div class="news-date muted">{p.data.date}</div>
         <h3 class="news-title">{p.data.title}</h3>
         <div class="news-excerpt">
-          {p.body.split('\n\n')[0].replace(/^#+\s.*$/gm, '').substring(0, 200)}...
+          {getExcerpt(p.body)}
         </div>
         <a href={`/news/${p.slug}/`} class="btn" style="margin-top: 0.75rem;">
           <i class="mdi mdi-open-in-new"></i> Read more
