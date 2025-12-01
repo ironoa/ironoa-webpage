@@ -9,7 +9,7 @@ const all = await getCollection('news', ({ data }) => !data.draft);
 const posts = all.sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
 ---
 <Base title={pageTitle} description={desc}>
-  <h1 class="h1">ALESSIO aka ironoa</h1>
+  <h1 class="h1"><img src="/green-tick-icon.jpg" alt="Verified" style="width: 32px; height: 32px; display: inline-block; vertical-align: middle; margin-right: 0.5rem;" /> ALESSIO aka ironoa</h1>
   <p class="lede">Independent Polkadot & Kusama Validator</p>
 
   <h2 class="h2" style="margin-top: 2rem;"><i class="mdi mdi-newspaper-variant-outline"></i> News & Updates</h2>
