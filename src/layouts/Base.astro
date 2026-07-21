@@ -22,7 +22,7 @@ const {
     <meta name="viewport" content="width=device-width">
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="Kusama validator, Polkadot ecosystem, 1KV Program, blockchain validator, Swiss validator, crypto valley" />
+    <meta name="keywords" content="Kusama validator, Polkadot ecosystem, blockchain validator, Swiss validator, crypto valley" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -32,9 +32,6 @@ const {
 
     <!-- Canonical + alternates -->
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" href="https://ironoa.com" hreflang="x-default" />
-    <link rel="alternate" href="https://ironoa.ch" hreflang="de-CH" />
-    <link rel="alternate" href="https://ironoa.io" hreflang="en-US" />
 
     <!-- Icons/manifest (drop files into /public) -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -57,6 +54,7 @@ const {
           <i class="mdi mdi-close"></i>
         </button>
         <a href="/kusama" onclick="this.parentElement.classList.remove('open')">Kusama</a>
+        <a href="/news" onclick="this.parentElement.classList.remove('open')">News</a>
         <a href="/about" onclick="this.parentElement.classList.remove('open')">About</a>
         <a href="/terms" onclick="this.parentElement.classList.remove('open')">Terms</a>
       </nav>
