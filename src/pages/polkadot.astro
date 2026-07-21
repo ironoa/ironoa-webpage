@@ -1,58 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
-
-const validator = {
-  name: 'ALESSIO',
-  address: '16cdSZUq7kxq6mtoVMWmYXo62FnNGT9jzWjVRUg87CpL9pxP',
-  commission: '5%',
-  location: 'Southern Switzerland',
-  subscan: 'https://polkadot.subscan.io/validator/16cdSZUq7kxq6mtoVMWmYXo62FnNGT9jzWjVRUg87CpL9pxP',
-  assetHubSubscan: 'https://assethub-polkadot.subscan.io/validator/16cdSZUq7kxq6mtoVMWmYXo62FnNGT9jzWjVRUg87CpL9pxP',
-};
 ---
-<Base title="Polkadot — ironoa" description="ironoa Polkadot validator details and specifications.">
-  <h1 class="h1"><img src="/polkadot-icon.png" alt="Polkadot" style="width: 32px; height: 32px; display: inline-block; vertical-align: middle; margin-right: 0.5rem;" /> Polkadot Validator</h1>
-  <p>Independent validation on Polkadot with self-hosted infrastructure in {validator.location}.</p>
+<Base title="Polkadot — ironoa" description="ironoa Polkadot validation has been retired; Kusama validation continues.">
+  <h1 class="h1"><img src="/polkadot-icon.png" alt="Polkadot" style="width: 32px; height: 32px; display: inline-block; vertical-align: middle; margin-right: 0.5rem;" /> Polkadot Validator — Retired</h1>
 
   <div class="panel">
-    <h2 class="h2"><i class="mdi mdi-fingerprint"></i> Validator Details</h2>
-    <ul class="kv">
-      <li><span>Validator</span><code>{validator.name}</code></li>
-      <li><span>Address</span><code style="font-size: 0.8rem;">{validator.address}</code></li>
-      <li><span>Commission</span><code>{validator.commission}</code></li>
-      <li><span>Location</span><code>{validator.location}</code></li>
-    </ul>
-    <p style="margin-top:.75rem; display:flex; gap:.75rem; flex-wrap:wrap;">
-      <a class="btn" href={validator.assetHubSubscan} target="_blank" rel="noreferrer"><i class="mdi mdi-open-in-new"></i> AssetHub Subscan</a>
-      <a class="btn" href="https://telemetry.polkadot.io/" target="_blank" rel="noreferrer"><i class="mdi mdi-open-in-new"></i> Telemetry</a>
-    </p>
-  </div>
-
-  <div class="panel">
-    <h2 class="h2"><i class="mdi mdi-server"></i> Infrastructure</h2>
-    <p>Self-hosted infrastructure at a unique location in Southern Switzerland. This setup prioritizes independence, decentralization, and full control over the validator stack.</p>
-    
-    <h3 style="font-size: 1rem; font-weight: 600; margin-top: 1rem;">Hardware Specifications</h3>
-    <ul class="kv">
-      <li><span>CPU</span><code>AMD Ryzen 9 9950X3D</code></li>
-      <li><span>Cores</span><code>8 dedicated cores (SMT disabled)</code></li>
-      <li><span>Memory</span><code>96GB DDR5 ECC @ 5600MT/s</code></li>
-      <li><span>Dedicated RAM</span><code>32GB to Polkadot VM</code></li>
-      <li><span>Storage</span><code>ZFS mirroring: ×2 Samsung 990 Pro 4TB NVMe</code></li>
-      <li><span>Network</span><code>10 Gbit/s symmetric, unmetered</code></li>
-    </ul>
-
-    <h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem;">Monitoring</h3>
-    <p>Dedicated external monitoring system with 24/7 alerting ensures operational continuity.</p>
-  </div>
-
-  <div class="panel">
-    <h2 class="h2"><i class="mdi mdi-anchor"></i> How to Nominate</h2>
-    <ol style="margin-left:1.25rem; line-height: 1.8;">
-      <li>Open <a href="https://polkadot.js.org/apps/#/staking" target="_blank" rel="noreferrer" style="text-decoration: underline;">Polkadot.js Staking interface</a></li>
-      <li>Select your stash account and choose "Nominate"</li>
-      <li>Add our validator address: <code style="font-size: 0.75rem;">{validator.address}</code></li>
-      <li>Confirm the transaction</li>
-    </ol>
+    <p>Our Polkadot validator <code>ALESSIO</code> was wound down in July 2026, following the
+    <a href="https://medium.com/web3foundation/web3-foundation-is-sunsetting-the-decentralized-nodes-program-761b70b1a468" target="_blank" rel="noreferrer" style="text-decoration: underline;">sunset of the Web3 Foundation's Decentralized Nodes program</a> —
+    the initiative that sustained independent, self-hosted validators like ours on Polkadot.</p>
+    <p style="margin-top:.75rem;">It operated since 2020 with zero slashing incidents, from self-hosted
+    infrastructure in Southern Switzerland.</p>
+    <p style="margin-top:.75rem;">Our validation continues on <a href="/kusama" style="text-decoration: underline;">Kusama</a>.</p>
   </div>
 </Base>

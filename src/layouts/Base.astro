@@ -8,8 +8,8 @@ export interface Props {
   ogUrl?: string;
 }
 const {
-  title = 'ironoa — Independent Polkadot & Kusama Validator',
-  description = 'Independent validator services for the Polkadot ecosystem, operated from Switzerland with high-end hardware and an excellent operational record.',
+  title = 'ironoa — Independent Kusama Validator',
+  description = 'Independent Kusama validator services in the Polkadot ecosystem, operated from Switzerland with high-end hardware and an excellent operational record.',
   canonical = new URL(Astro.url.pathname, Astro.site).toString(),
   ogUrl = canonical
 } = Astro.props;
@@ -22,7 +22,7 @@ const {
     <meta name="viewport" content="width=device-width">
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="Polkadot validator, Kusama validator, 1KV Program, blockchain validator, Swiss validator, crypto valley" />
+    <meta name="keywords" content="Kusama validator, Polkadot ecosystem, 1KV Program, blockchain validator, Swiss validator, crypto valley" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -56,7 +56,6 @@ const {
         <button class="close-menu" aria-label="Close menu" onclick="this.parentElement.classList.remove('open')">
           <i class="mdi mdi-close"></i>
         </button>
-        <a href="/polkadot" onclick="this.parentElement.classList.remove('open')">Polkadot</a>
         <a href="/kusama" onclick="this.parentElement.classList.remove('open')">Kusama</a>
         <a href="/about" onclick="this.parentElement.classList.remove('open')">About</a>
         <a href="/terms" onclick="this.parentElement.classList.remove('open')">Terms</a>
@@ -77,7 +76,7 @@ const {
           <i class="mdi mdi-github"></i>
         </a>
       </div>
-      <span class="muted">Independent Polkadot & Kusama Validator</span>
+      <span class="muted">Independent Kusama Validator</span>
     </footer>
   </body>
 </html>
