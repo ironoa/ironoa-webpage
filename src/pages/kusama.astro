@@ -5,13 +5,13 @@ const validator = {
   name: 'ALESSIO',
   address: 'GaK38GT7LmgCpRSTRdDC2LeiMaV9TJmx8NmQcb9L3cJ3fyX',
   commission: '15%',
-  location: 'OVH Infrastructure',
+  location: 'Self-hosted, Switzerland',
   assetHubSubscan: 'https://assethub-kusama.subscan.io/validator/GaK38GT7LmgCpRSTRdDC2LeiMaV9TJmx8NmQcb9L3cJ3fyX',
 };
 ---
 <Base title="Kusama — ironoa" description="ironoa Kusama validator details and specifications.">
   <h1 class="h1"><img src="/kusama-icon.jpg" alt="Kusama" style="width: 32px; height: 32px; display: inline-block; vertical-align: middle; margin-right: 0.5rem;" /> Kusama Validator</h1>
-  <p>Independent Kusama validator hosted on professional OVH infrastructure.</p>
+  <p>Independent Kusama validator, self-hosted in Southern Switzerland.</p>
 
   <div class="panel">
     <h2 class="h2"><i class="mdi mdi-fingerprint"></i> Validator Details</h2>
@@ -29,15 +29,15 @@ const validator = {
 
   <div class="panel">
     <h2 class="h2"><i class="mdi mdi-server"></i> Infrastructure</h2>
-    <p>Hosted on OVH infrastructure with professional-grade datacenter services. This setup focuses on maximum availability through established hosting providers.</p>
-    
+    <p>Self-hosted on owned hardware in Southern Switzerland, moved there from a rented datacenter in September 2026. The trade is deliberate: one less intermediary between the operator and the machine, and one more validator outside the handful of providers that host most of the network.</p>
+
     <h3 style="font-size: 1rem; font-weight: 600; margin-top: 1rem;">Hardware Specifications</h3>
     <ul class="kv">
-      <li><span>CPU</span><code>Intel Xeon-E 2136</code></li>
-      <li><span>Cores</span><code>6 dedicated cores (SMT disabled)</code></li>
-      <li><span>Memory</span><code>64GB ECC RAM @ 2666 MHz</code></li>
-      <li><span>Storage</span><code>Soft RAID1: ×2 1.92TB NVMe SSD</code></li>
-      <li><span>Network</span><code>500 Mbit/s symmetric, unmetered</code></li>
+      <li><span>CPU</span><code>AMD Ryzen 9 9950X3D</code></li>
+      <li><span>Cores</span><code>8 dedicated cores, no SMT siblings</code></li>
+      <li><span>Memory</span><code>24GB ECC DDR5</code></li>
+      <li><span>Storage</span><code>4TB NVMe SSD, dedicated</code></li>
+      <li><span>Network</span><code>10 Gbit/s symmetric, unmetered</code></li>
     </ul>
 
     <h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem;">Monitoring</h3>

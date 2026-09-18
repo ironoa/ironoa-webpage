@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
 const pageTitle = 'ironoa — Independent Kusama Validator';
-const desc = 'Independent validator services from Switzerland with bare-metal hardware, redundancy, and strong operational practices.';
+const desc = 'Independent Kusama validator, self-hosted on owned hardware in Switzerland, with redundancy and strong operational practices.';
 
 const all = await getCollection('news', ({ data }) => !data.draft);
 const posts = all.sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
